@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BoardBased Games</title>
+  <link rel="stylesheet" href="game.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    html {
+      box-sizing: border-box;
+      font-family: sans-serif;
+      line-height: 1.5;
+    }
+    *, ::after, ::before {
+      box-sizing: inherit;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1a1a2e;
+      color: #ffffff;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #0f3460;
+      padding: 1rem 2rem;
+    }
+    #logo img {
+      height: 40px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero-slider {
+      position: relative;
+      overflow: hidden;
+      height: 90vh;
+    }
+    .hero-slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .hero-slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+    .hero-caption {
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      text-align: center;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+    }
+    .hero-caption h1 {
+      font-size: 3.5rem;
+      color: #e94560;
+    }
+    .hero-caption p {
+      font-size: 1.2rem;
+      color: #ddd;
+    }
+    #gaming {
+      text-align: center;
+      padding: 2rem;
+      background-color: #0f3460;
+    }
+    .conta {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .conta h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .conta h4 {
+      color: #ccc;
+      margin-bottom: 2rem;
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .col-md-6 {
+      flex: 1;
+      min-width: 300px;
+    }
+    .sideh3 h3 {
+      background: #e94560;
+      padding: 1rem;
+      border-radius: 6px;
+      color: #fff;
+    }
+    .temp {
+      max-width: 700px;
+      margin: 4rem auto;
+      background: #0f3460;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+    .int input, .int textarea, .int select {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    .button button {
+      padding: 0.8rem 2rem;
+      background-color: #e94560;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .footer {
+      background-color: black;
+      color: white;
+      padding: 2rem;
+    }
+    .footer .box-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .footer .loc h3 {
+      text-transform: capitalize;
+      margin-bottom: 1rem;
+    }
+    .footer a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .sq {
+      text-align: center;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <div id="logo">
+      <img src="logo.png">
+    </div>
+    <ul>
+      <li class="item"><a href="index.html">Home</a></li>
+      <li class="item"><a href="about.html">About Us</a></li>
+      <li class="item"><a href="carrer.html">Career</a></li>
+      <li class="item"><a href="internship.html">Internship</a></li>
+      <li class="item"><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+  <div class="hero-slider">
+    <img src="epic-battlefield-postapocalypse-cinematic-dramatic-futuristic-fantasycruel-war-scenes-digital-paintingai-generated-art_146482-8342.avif" class="hero-slide active" />
+    <img src="pngtree-tank-in-a-fiery-battlefield-a-dramatic-scene-of-war-picture-image_15801966.jpg" class="hero-slide" />
+    <img src="61uZhZFecRL.jpg" class="hero-slide" />
+    <div class="hero-caption">
+      <h1>UNLEASH YOUR IMAGINATION</h1>
+      <p>Build, Play, and Redefine Board-Based Gaming</p>
+    </div>
+  </div>
+  <div id="gaming">
+    <header>
+      <h3>Level up your future with BoardBased Games</h3>
+    </header>
+  </div>
+  <div class="conta">
+    <div>
+      <h1>Internship Program for Software Developers</h1>
+      <h4>Join our 3-month paid internship program where you’ll work on real gaming projects and gain job-ready experience.</h4>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Why the program is beneficial for you?</h2>
+        <p>Our program bridges the gap between academic knowledge and corporate demands. You’ll work on actual game development tasks, guided by industry mentors.</p>
+        <p>After completion, top performers may be hired full-time. All participants receive a certificate and hands-on experience.</p>
+        <p>This is not a classroom. It’s a live battlefield for developers. Learn by doing, supported by our expert team.</p>
+      </div>
+      <div class="col-md-6">
+        <div class="sideh3"><h3>LEARN TO BUILD GAMES</h3></div>
+        <div class="sideh3"><h3>3-MONTH PAID INTERNSHIP & CERTIFICATE</h3></div>
+        <div class="sideh3"><h3>REAL LIVE PROJECT EXPERIENCE</h3></div>
+        <div class="sideh3"><h3>GET INDUSTRY-READY SKILLS</h3></div>
+      </div>
+    </div>
+  </div>
+  <div class="temp">
+    <div class="title">
+      <form onsubmit="emailSend(); this.reset(); return false;">
+        <h1>Apply For The Internship</h1>
+        <div class="int">
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
+          <select required>
+            <option disabled selected>Select Job Role</option>
+            <option>Frontend Developer</option>
+            <option>Backend Developer</option>
+            <option>Game Tester</option>
+            <option>UI/UX Designer</option>
+          </select>
+          <select required>
+            <option disabled selected>How did you find us?</option>
+            <option>Campus Drive</option>
+            <option>LinkedIn</option>
+            <option>Friend Referral</option>
+            <option>Other</option>
+          </select>
+          <textarea placeholder="Message" rows="4" required></textarea>
+          <div class="button"><button type="submit">Submit</button></div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <section class="footer">
+    <div class="box-container">
+      <div class="loc">
+        <h3>Quick Links</h3>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Internship</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="loc">
+        <h3>Extra Links</h3>
+        <a href="#">Ask Questions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+      <div class="loc">
+        <h3>Contact Info</h3>
+        <a href="#">+123-456-7890</a>
+        <a href="#">+111-222-3333</a>
+        <a href="#">keshavsapre168@gmail.com</a>
+        <a href="#">Pune, India</a>
+      </div>
+      <div class="loc">
+        <h3>Follow Us</h3>
+        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      </div>
+    </div>
+    <div class="sq">Copyright &copy; BoardBased Games. All rights reserved!</div>
+  </section>
+  <script>
+    const slides = document.querySelectorAll('.hero-slide');
+    let current = 0;
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 4000);
+  </script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

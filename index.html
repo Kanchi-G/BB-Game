@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoardBased Games</title>
+<link rel="stylesheet" href="game.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<style>
+html {
+    box-sizing: border-box;
+    cursor: default;
+    font-family: sans-serif;
+    line-height: 1.5;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1a1a2e;
+      color: #ffffff;
+    }
+    .hero-slider {
+      position: relative;
+      overflow: hidden;
+      height: 90vh;
+    }
+    .hero-slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .hero-slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+    .hero-caption {
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      text-align: center;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+    }
+    .hero-caption h1 {
+      font-size: 3.5rem;
+      color: #e94560;
+    }
+    .hero-caption p {
+      font-size: 1.2rem;
+      color: #ddd;
+    }
+:after, :before {
+    text-decoration: inherit;
+    vertical-align: inherit;
+}
+*, :after, :before {
+    background-repeat: no-repeat;
+    box-sizing: inherit;
+}
+:after, :before {
+    text-decoration: inherit;
+    vertical-align: inherit;
+}
+*, :after, :before {
+    background-repeat: no-repeat;
+    box-sizing: inherit;
+}
+::selection {
+    background-color: #b3d4fc;
+    color: #000;
+    text-shadow: none;
+}
+.modulePromo{
+    text-align: center;
+    background-color:rgb(205, 202, 202);
+    color: black;
+}
+.modulePromo h2{
+font-size: 30px;
+padding: 7px 7px;
+}
+.cta-section {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, #0f3460, #16213e);
+      color: white;
+    }
+    .cta-section h2 {
+      font-size: 2.8rem;
+      color: #e94560;
+      margin-bottom: 1rem;
+    }
+    .cta-section p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: auto;
+      color: #ccc;
+    }
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+    .stat-box {
+      background: #16213e;
+      padding: 2rem;
+      border-radius: 10px;
+      width: 220px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      transition: 0.3s ease;
+    }
+    .stat-box:hover {
+      background: #e94560;
+      color: #fff;
+    }
+    .stat-box h3 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .stat-box p {
+      font-size: 1rem;
+      color: #ccc;
+    }
+    .cta-section a {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      background-color: #e94560;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+    .cta-section a:hover {
+      background-color: white;
+      color: #e94560;
+    }
+
+.highlighted{
+    font-size: 2.0rem;
+    font-weight: bolder;
+
+}
+.container1{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 120px;
+}
+.int {
+      padding: 4rem 2rem;
+      background-color: #1a1a2e;
+    }
+    .push {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      text-align: center;
+    }
+    .push .xbox {
+      background: #0f3460;
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 320px;
+      transition: 0.3s;
+    }
+    .push .xbox:hover {
+      background: #e94560;
+      color: white;
+    }
+    .push .xbox h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .push .xbox p {
+      font-size: 1rem;
+      color: #ddd;
+    }
+.blog{
+    text-align: center;
+    padding-top: 56px;
+    padding-left: 165px;
+    padding-right: 165px;
+}
+.h1{
+ font-size: 49px;
+}
+.port{
+    font-size: 20px;
+}
+.blog0{
+    display: flex;
+    justify-content: space-around;
+     text-align: center;
+     padding-bottom: 56px;
+}
+@media (max-width:500px) {
+ *{
+    width: 100%;
+ }
+    .blog{
+    text-align: center;
+    width: 100%;
+    padding: 0px 0px 0px 0px;
+    margin-top: 15px;
+}
+.h1{
+ font-size: 30px;
+}
+.port{
+    font-size: 15px;
+}
+    .blog0{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        padding: 0px 0px 0px 0px;
+    }
+}@media (max-width:500px) {
+    .push{
+        display: flex;
+        flex-direction: column;
+        width:100%;
+        padding-left: 0px;
+        margin: 0px 0px 0px 0px;
+        height: 530px;
+    }
+    .text-center{
+    width: 100%;
+    font-size: 10px;
+    color: darkorchid;
+    text-align: center;
+    padding: 0px 0px 0px 0px;
+}
+.section2{
+    padding: 0px 0px 0px 0px;
+}
+
+.section2 h1{
+    font-size: 2rem;
+    text-align: center;
+}
+
+.section2 p{
+    padding: 0px 0px 0px 0px;
+    text-align: center;
+}
+.plain{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+}
+}
+
+</style>
+<body>
+    
+    <nav id="navbar">
+        <div id="logo">
+            <img src="logo.png" >
+            </div>
+            <div id="container">
+        </div>
+        <ul>
+            <li class="item"><a href="index.html">Home</a></li>
+            <li class="item"><a href="about.html">About Us</a></li>
+            <li class="item"><a href="carrer.html">Carrer</a></li>
+            <li class="item"><a href="internship.html">Internship</a></li>
+            <li class="item"><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <div class="hero-slider">
+        <img src="epic-battlefield-postapocalypse-cinematic-dramatic-futuristic-fantasycruel-war-scenes-digital-paintingai-generated-art_146482-8342.avif" class="hero-slide active" />
+        <img src="pngtree-tank-in-a-fiery-battlefield-a-dramatic-scene-of-war-picture-image_15801966.jpg" class="hero-slide" />
+        <img src="61uZhZFecRL.jpg" class="hero-slide" />
+        <div class="hero-caption">
+          <h1>UNLEASH YOUR IMAGINATION</h1>
+          <p>Build, Play and Redefine Broadbased Games</p>
+        </div>
+      </div>
+<div class="blog">
+    <div class="h1">
+WHY BOARDBASED GAMES</div>
+<div class="port">
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis, vel! Fugit nemo excepturi magni doloremque quia saepe accusamus, perspiciatis molestiae culpa est! Accusantium earum hic excepturi rerum illum placeat animi, soluta incidunt qui officia obcaecati nulla.</p>
+</div>
+</div>
+<section class="blog0">
+<div class="blog1">
+    <img src="Brainstorm.jpg" width="175px" height="175px">
+    <h1>Brainstorm</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti reiciendis esse vitae tenetur cum ut!</p>
+</div>
+  <div class="blog2">
+    <img src="Friendly working envi.png" width="175px" height="175px"alt="">
+    <h1>Friendly Environment</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente quasi veritatis odit architecto obcaecati corrupti?</p>
+  </div>
+  <div class="blog3">
+    <img src="Small Team.jpg"width="175px" height="175px" alt="">
+    <h1>Small Team</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus ipsa totam vitae, et adipisci illum?</p>
+  </div>
+  <div class="blog4">
+    <img src="Long weekend.png" width="175px" height="175px"alt="">
+    <h1>Long Weekend</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error maiores quos iste quo itaque assumenda!</p>
+  </div>
+</section>
+<section class="cta-section">
+    <h2>Join Our Team and Make a Difference Today!</h2>
+    <p>We’re building something extraordinary in the world of board-based games. Whether you're a creator, a coder, or just passionate about gaming—we need you!</p>
+    <div class="stats">
+      <div class="stat-box">
+        <h3>24M+</h3>
+        <p>App Downloads</p>
+      </div>
+      <div class="stat-box">
+        <h3>100+</h3>
+        <p>Countries Reached</p>
+      </div>
+    </div>
+    <a href="internship.html">Explore Opportunities</a>
+  </section>
+    <div class="ola">
+        <h1>Have An Idea?</h1>
+        <p>"Together we will develop your future"</p>
+        <p>Interested in our specialization for your Dream Project?
+            Get a quote or ask for more information, It’s Free!</p>
+        <a href="internship.html"><button>Get in touch</button></a>
+    </div>
+    <section class="int">
+        <div class="push">
+          <div class="xbox">
+            <h2>Desert</h2>
+            <p>Survive and innovate in the harshest environments with creative game design.</p>
+          </div>
+          <div class="xbox">
+            <h2>Groves</h2>
+            <p>Thrive in collaborative forests of creativity and team energy.</p>
+          </div>
+          <div class="xbox">
+            <h2>Peaks</h2>
+            <p>Reach the pinnacle of your skills by developing high-quality experiences.</p>
+          </div>
+        </div>
+      </section>
+    
+    <div class="modulePromo module" ><h2 class="promo__content__title" data-innertext="BoardBased Connect" data-ccf-l="title">BoardBased Connect</h2><p>All your games, friends, and benefits in one place.</p><a data-innertext="Explore Carrer" data-ccm-m="buttonMaster" href="carrer.html" target="blank" ><span class="" data-innertext="Get Ubisoft Connect" data-ccid-l="7wc7W0g8k6YRfLlWjB2OOU" data-ccm-l="button" data-ccf-l="buttonText">Get BoardBased Connect</span></a></div></div></div></div></div>
+    <section class="footer">
+        <div class="box-container">
+      <div class="loc">
+        <h3>quick links</h3>
+     <a href="#"><i class="fas fa-angle-right"></i>home</a>
+     <a href="#"><i class="fas fa-angle-right"></i>about</a>
+     <a href="#"><i class="fas fa-angle-right"></i>internship</a>
+     <a href="#"><i class="fas fa-angle-right"></i>contact</a></div>
+     <div class="loc">
+        <h3>extra links</h3>
+     <a href="#"><i class="fas fa-angle-right"></i>ask questions</a>
+     <a href="#"><i class="fas fa-angle-right"></i>about</a>
+     <a href="#"><i class="fas fa-angle-right"></i>privacy policy</a>
+     <a href="#"><i class="fas fa-angle-right"></i>terms of use</a></div>
+     <div class="loc">
+        <h3>contact info</h3>
+     <a href="#"><i class="fas fa-phone"></i>+123-456-7890</a>
+     <a href="#"><i class="fas fa-phone"></i>+111-222-3333</a>
+     <a href="#"><i class="fas fa-envelope"></i>keshavsapre168@gmail.com</a>
+     <a href="#"><i class="fas fa-map"></i>pune,india-400104</a></div>
+     <div class="loc">
+        <h3>follow us</h3>
+        <a href=""><i class="fa-brands fa-square-instagram"></i>instagram</a> 
+        <a href=""><i class="fa-brands fa-square-facebook"></i>facebook</a> 
+         <a href=""><i class="fa-brands fa-linkedin"></i>linkedin</a> </div>
+        </div>
+        <div class="sq">Copyright &copy; BoardBased@gmail.com All rights reserved!  
+    </div>
+</section>
+<script src="game.js">
+</script>
+</body>
+</html>
